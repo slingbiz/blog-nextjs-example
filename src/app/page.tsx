@@ -8,8 +8,9 @@ export default function Index() {
   const allPosts = getAllPosts();
 
   const heroPost = allPosts[0];
+  const secondHeroPost = allPosts[1];
 
-  const morePosts = allPosts.slice(1);
+  const morePosts = allPosts.slice(2);
 
   return (
     <main>
@@ -22,6 +23,14 @@ export default function Index() {
           author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
+        />
+        <HeroPost
+          title={secondHeroPost.title}
+          coverImage={secondHeroPost.coverImage}
+          date={secondHeroPost.date}
+          author={secondHeroPost.author}
+          slug={secondHeroPost.slug}
+          excerpt={secondHeroPost.excerpt}
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
